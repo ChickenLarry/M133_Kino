@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="version-1-kino" />
+        <module name="M133_Kino" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="version-1-kino" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
