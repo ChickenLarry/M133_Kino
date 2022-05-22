@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saele.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/createJSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/data/DataHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/TestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saele.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +39,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -44,6 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

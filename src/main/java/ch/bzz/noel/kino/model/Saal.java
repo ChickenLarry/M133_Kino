@@ -1,30 +1,30 @@
 package ch.bzz.noel.kino.model;
 
-public class Saele {
+public class Saal {
 
-    private String saeleUUID;
+    private String saalUUID;
     private String saalNummer;
     private int plaetze;
     private int reihen;
     private int anzahlPlaetzeProReihe;
 
-    public Saele() {
+    public Saal() {
     }
 
-    public Saele(String saeleUUID, String saalNummer, int plaetze, int reihen, int anzahlPlaetzeProReihe) {
-        this.saeleUUID = saeleUUID;
+    public Saal(String saeleUUID, String saalNummer, int plaetze, int reihen, int anzahlPlaetzeProReihe) {
+        this.saalUUID = saeleUUID;
         this.saalNummer = saalNummer;
         this.plaetze = plaetze;
         this.reihen = reihen;
         this.anzahlPlaetzeProReihe = anzahlPlaetzeProReihe;
     }
 
-    public String getSaeleUUID() {
-        return saeleUUID;
+    public String getSaalUUID() {
+        return saalUUID;
     }
 
-    public void setSaeleUUID(String saeleUUID) {
-        this.saeleUUID = saeleUUID;
+    public void setSaalUUID(String saeleUUID) {
+        this.saalUUID = saeleUUID;
     }
 
     public String getSaalNummer() {
