@@ -13,6 +13,9 @@ import java.util.Set;
 
 /**
  * configure the web services and properties
+ *
+ *  * @author noel
+ *  * @version 1.0
  */
 
 @ApplicationPath("/resource")

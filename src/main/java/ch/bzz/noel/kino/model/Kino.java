@@ -1,19 +1,41 @@
 package ch.bzz.noel.kino.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import ch.bzz.noel.kino.data.DataHandler;
+
+/**
+ * @author noel
+ * @version 1.0
+ */
 public class Kino {
 
+    /**
+     * @see Kino
+     * */
+        @JsonIgnore
         private String kinoUUID;
         private String name;
         private String ort;
 
-        public Kino() {
+    /**
+     * empty Constructor
+     */
+    public Kino() {
         }
 
-        public Kino(String kinoUUID, String name, String ort) {
-            this.kinoUUID = kinoUUID;
-            this.name = name;
-            this.ort = ort;
-        }
+    /**
+     * Constructor
+     *
+     * @param kinoUUID
+     * @param name
+     * @param ort
+     */
+
+    public Kino(String kinoUUID, String name, String ort) {
+        this.kinoUUID = kinoUUID;
+        this.name = name;
+        this.ort = ort;
+    }
 
     public String getKinoUUID() {
         return kinoUUID;

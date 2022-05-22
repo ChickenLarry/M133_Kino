@@ -1,7 +1,20 @@
 package ch.bzz.noel.kino.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import ch.bzz.noel.kino.data.DataHandler;
+
+/**
+ *
+ * @author noel
+ * @version 1.0
+ *
+ */
 public class Film {
 
+    /**
+     *  @see Film
+     */
+    @JsonIgnore
     private String filmUUID;
     private String titel;
     private int laenge;
@@ -9,9 +22,19 @@ public class Film {
     private String hauptdarsteller;
     private String regisseur;
 
+
     public Film() {
     }
 
+    /**
+     *
+     * @param filmUUID
+     * @param titel
+     * @param laenge
+     * @param preis
+     * @param hauptdarsteller
+     * @param regisseur
+     */
     public Film(String filmUUID, String titel, int laenge, int preis, String hauptdarsteller, String regisseur) {
         this.filmUUID = filmUUID;
         this.titel = titel;

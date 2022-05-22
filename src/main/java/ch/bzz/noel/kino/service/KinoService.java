@@ -13,10 +13,18 @@ import java.util.List;
 
 /**
  * Kino service
+ *
+ *  * @author noel
+ *  * @version 1.0
  */
 @Path("kino")
 public class KinoService  {
 
+    /**
+     * @return List of all kinos
+     *
+     * @throws JsonProcessingException
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -35,6 +43,11 @@ public class KinoService  {
         }
     }
 
+    /**
+     * Read a kino by uuid
+     * @param kinoUUID
+     *
+     */
     @GET
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)

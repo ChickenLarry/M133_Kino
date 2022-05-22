@@ -7,18 +7,33 @@ import ch.bzz.noel.kino.model.Saal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * DataHandler Class
+ *
+ * @author noel
+ * @version 1.0
+ * @see DataHandler
+ */
+
 public class DataHandler {
     private static DataHandler instance = null;
     private List<Film> filmList;
     private List<Kino> kinoList;
     private List<Saal> SaalList;
 
+    /**
+     * Constructor
+     * */
     public DataHandler() {
         setFilmList(new ArrayList<>());
         setKinoList(new ArrayList<>());
         setSaalList(new ArrayList<>());
     }
 
+    /**
+     * Getter for instance
+     * @return instance
+     * */
     public static DataHandler getInstance() {
         if (instance == null) {
             instance = new DataHandler();
@@ -54,6 +69,7 @@ public class DataHandler {
         return getFilmList();
     }
 
+
     public Film readFilmByUUID(String filmUUID) {
         for (Film film : getFilmList()) {
             if (film.getFilmUUID().equals(filmUUID)) {
@@ -88,55 +104,4 @@ public class DataHandler {
         }
         return null;
     }
-
-/*    public void addFilm(Film film) {
-        filmList.add(film);
-    }
-
-    public void addKino(Kino kino) {
-        kinoList.add(kino);
-    }
-
-    public void addSaal(Saal saal) {
-        SaalList.add(saal);
-    }
-
-    public Film getFilmByUUID(String uuid) {
-        for (Film film : filmList) {
-            if (film.getFilmUUID().equals(uuid)) {
-                return film;
-            }
-        }
-        return null;
-    }
-
-    public Kino getKinoByUUID(String uuid) {
-        for (Kino kino : kinoList) {
-            if (kino.getKinoUUID().equals(uuid)) {
-                return kino;
-            }
-        }
-        return null;
-    }
-
-    public Saal getSaalByUUID(String uuid) {
-        for (Saal saal : SaalList) {
-            if (saal.getSaalUUID().equals(uuid)) {
-                return saal;
-            }
-        }
-        return null;
-    }
-
-    public void removeFilm(Film film) {
-        filmList.remove(film);
-    }
-
-    public void removeKino(Kino kino) {
-        kinoList.remove(kino);
-    }
-
-    public void removeSaal(Saal saal) {
-        SaalList.remove(saal);
-    }*/
 }

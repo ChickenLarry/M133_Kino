@@ -11,12 +11,21 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
+
 /**
  * Saal service
+ *
+ * @author noel
+ * @version 1.0
  */
 @Path("Saal")
 public class SaalService {
 
+    /**
+     * @return List of all saals
+     *
+     * @throws JsonProcessingException
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -36,6 +45,11 @@ public class SaalService {
         }
     }
 
+    /**
+     * Read a saal by uuid
+     * @param saalUUID
+     *
+     */
     @GET
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)

@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/createJSON.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/data/DataHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/TestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="xml update">
+      <change afterPath="$PROJECT_DIR$/testing/List.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/film.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/kino.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/saal.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/user.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saele.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/data/DataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/data/DataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/TestService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -61,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autoscout_m133" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -81,7 +87,24 @@
       <option name="presentableId" value="Default" />
       <updated>1653234452603</updated>
       <workItem from="1653234454158" duration="881000" />
+      <workItem from="1653247659026" duration="1435000" />
+      <workItem from="1653249638130" duration="2606000" />
     </task>
+    <task id="LOCAL-00001" summary="service">
+      <created>1653241117101</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653241117101</updated>
+    </task>
+    <task id="LOCAL-00002" summary="xml update">
+      <created>1653241276473</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653241276473</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,5 +120,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="service" />
+    <MESSAGE value="xml update" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml update" />
   </component>
 </project>
