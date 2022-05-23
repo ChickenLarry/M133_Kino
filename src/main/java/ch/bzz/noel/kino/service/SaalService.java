@@ -1,11 +1,13 @@
 package ch.bzz.noel.kino.service;
 
-import jakarta.ws.rs.Path;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import ch.bzz.noel.kino.data.DataHandler;
 import ch.bzz.noel.kino.model.Saal;
-import jakarta.ws.rs.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -23,7 +25,6 @@ public class SaalService {
 
     /**
      * @return List of all saals
-     *
      * @throws JsonProcessingException
      */
     @GET
@@ -47,8 +48,8 @@ public class SaalService {
 
     /**
      * Read a saal by uuid
-     * @param saalUUID
      *
+     * @param saalUUID
      */
     @GET
     @Path("read/{uuid}")

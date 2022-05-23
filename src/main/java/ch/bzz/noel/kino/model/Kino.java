@@ -1,7 +1,8 @@
 package ch.bzz.noel.kino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import ch.bzz.noel.kino.data.DataHandler;
+
+import java.util.UUID;
 
 /**
  * @author noel
@@ -11,28 +12,27 @@ public class Kino {
 
     /**
      * @see Kino
-     * */
-        @JsonIgnore
-        private String kinoUUID;
-        private String name;
-        private String ort;
+     */
+    @JsonIgnore
+    private String kinoUUID;
+    private String name;
+    private String ort;
 
     /**
      * empty Constructor
      */
     public Kino() {
-        }
+    }
 
     /**
      * Constructor
      *
-     * @param kinoUUID
      * @param name
      * @param ort
      */
 
-    public Kino(String kinoUUID, String name, String ort) {
-        this.kinoUUID = kinoUUID;
+    public Kino(String name, String ort) {
+        this.kinoUUID = UUID.randomUUID().toString();
         this.name = name;
         this.ort = ort;
     }

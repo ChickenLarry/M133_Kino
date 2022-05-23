@@ -7,15 +7,13 @@ import jakarta.ws.rs.core.Application;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashSet;
 import java.util.Properties;
-import java.util.Set;
 
 /**
  * configure the web services and properties
  *
- *  * @author noel
- *  * @version 1.0
+ * @author noel
+ * @version 1.0
  */
 
 @ApplicationPath("/resource")

@@ -1,7 +1,8 @@
 package ch.bzz.noel.kino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import ch.bzz.noel.kino.data.DataHandler;
+
+import java.util.UUID;
 
 /**
  * @author noel
@@ -14,7 +15,7 @@ public class Saal {
      */
     @JsonIgnore
     private String saalUUID;
-    private String saalNummer;
+    private int saalNummer;
     private int plaetze;
     private int reihen;
     private int anzahlPlaetzeProReihe;
@@ -34,8 +35,8 @@ public class Saal {
      * @param reihen
      * @param anzahlPlaetzeProReihe
      */
-    public Saal(String saeleUUID, String saalNummer, int plaetze, int reihen, int anzahlPlaetzeProReihe) {
-        this.saalUUID = saeleUUID;
+    public Saal(int saalNummer, int plaetze, int reihen, int anzahlPlaetzeProReihe) {
+        this.saalUUID = UUID.randomUUID().toString();
         this.saalNummer = saalNummer;
         this.plaetze = plaetze;
         this.reihen = reihen;
@@ -50,11 +51,11 @@ public class Saal {
         this.saalUUID = saeleUUID;
     }
 
-    public String getSaalNummer() {
+    public int getSaalNummer() {
         return saalNummer;
     }
 
-    public void setSaalNummer(String saalNummer) {
+    public void setSaalNummer(int saalNummer) {
         this.saalNummer = saalNummer;
     }
 
