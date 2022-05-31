@@ -4,14 +4,12 @@ import ch.bzz.noel.kino.data.DataHandler;
 import ch.bzz.noel.kino.model.Saal;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.UUID;
 
 
 /**
@@ -70,6 +68,90 @@ public class SaalService {
         return Response
                 .status(200)
                 .entity(saal)
+                .build();
+    }
+
+    /**
+     * Create a new saal
+     *
+     * @Param Saal
+     * @return Response
+     */
+    @PUT
+    @Path("create")
+    @Produces (MediaType.TEXT_PLAIN)
+    public Response insertSaal(
+            @FormParam("saalNummer") int saalNummer,
+            @FormParam("plaetze") int plaetze,
+            @FormParam("reihen") int reihen,
+            @FormParam("anzahlPlaetzeProReihe") int anzahlPlaetzeProReihe
+    ){
+        Saal saal = new Saal();
+        saal.setSaalNummer(saalNummer);
+        saal.setPlaetze(plaetze);
+        saal.setReihen(reihen);
+        saal.setAnzahlPlaetzeProReihe(anzahlPlaetzeProReihe);
+
+        DataHandler.getInstance().insertSaal(saal);
+        return Response
+                .status(200)
+                .entity("Saal erfolgreich angelegt")
+                .build();
+    }
+
+    /**
+     * Update a saal
+     *
+     * @Param Saal
+     * @return Response
+     */
+    @POST
+    @Path("update")
+    @Produces (MediaType.TEXT_PLAIN)
+    public Response updateSaal(
+            @FormParam("saalUUID") String saalUUID,
+            @FormParam("saalNummer") int saalNummer,
+            @FormParam("plaetze") int plaetze,
+            @FormParam("reihen") int reihen,
+            @FormParam("anzahlPlaetzeProReihe") int anzahlPlaetzeProReihe
+    ){
+        int httpStatus = 200;
+        Saal saal = DataHandler.getInstance().readSaalByUUID(saalUUID);
+        if (saal == null) {
+            saal.setSaalUUID(UUID.randomUUID().toString());
+            saal.setSaalNummer(saalNummer);
+            saal.setPlaetze(plaetze);
+            saal.setReihen(reihen);
+            saal.setAnzahlPlaetzeProReihe(anzahlPlaetzeProReihe);
+
+            DataHandler.getInstance().updateFilm();
+        }else {
+            httpStatus = 404;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Saal erfolgreich aktualisiert")
+                .build();
+    }
+
+    /**
+     * Delete a Saal identified by uuid
+     * @Param saalUUID
+     * @return Response
+     */
+    @DELETE
+    @Path("delete")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteSaal(
+            @FormParam("saalUUID") String saalUUID
+    ) {
+        int httpStatus = 200;
+        if (!DataHandler.getInstance().deleteSaal(saalUUID)) {
+            httpStatus = 404;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Saal gelöscht")
                 .build();
     }
 }

@@ -98,6 +98,139 @@ public class DataHandler {
         }
     }
 
+    //write kinoJSON
+    public void writeKinoJSON() {
+        try {
+            String path = Config.getProperty("kinoJSON");
+            ObjectMapper objectMapper = new ObjectMapper();
+            String jsonString = objectMapper.writeValueAsString(getKinoList());
+            Files.write(Paths.get(path), jsonString.getBytes());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    //write saalJSON
+    public void writeSaalJSON() {
+        try {
+            String path = Config.getProperty("saalJSON");
+            ObjectMapper objectMapper = new ObjectMapper();
+            String jsonString = objectMapper.writeValueAsString(getSaalList());
+            Files.write(Paths.get(path), jsonString.getBytes());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    //write filmJSON
+    public void writeFilmJSON() {
+        try {
+            String path = Config.getProperty("filmJSON");
+            ObjectMapper objectMapper = new ObjectMapper();
+            String jsonString = objectMapper.writeValueAsString(getFilmList());
+            Files.write(Paths.get(path), jsonString.getBytes());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public List<Kino> readallKinos() {
+        return getKinoList();
+    }
+
+    public Kino readKinoByUUID(String kinoUUID) {
+        for (Kino kino : getKinoList()) {
+            if (kino.getKinoUUID().equals(kinoUUID)) {
+                return kino;
+            }
+        }
+        return null;
+    }
+
+    public void insertKino(Kino kino) {
+        getKinoList().add(kino);
+        writeKinoJSON();
+    }
+
+    public void updateKino(Kino kino) {
+        writeSaalJSON();
+    }
+
+    public boolean deleteKino(String kinoUUID) {
+        Kino kino = readKinoByUUID(kinoUUID);
+        if (kino != null) {
+            getSaalList().remove(kino);
+            writeSaalJSON();
+            return true;
+        }else
+            return false;
+    }
+
+    public List<Saal> readallSaele() {
+        return getSaalList();
+    }
+
+    public Saal readSaalByUUID(String saalUUID) {
+        for (Saal saal : getSaalList()) {
+            if (saal.getSaalUUID().equals(saalUUID)) {
+                return saal;
+            }
+        }
+        return null;
+    }
+
+    public void insertSaal(Saal saal) {
+        getSaalList().add(saal);
+        writeSaalJSON();
+    }
+
+    public void updateSaal(Saal saal) {
+        writeSaalJSON();
+    }
+
+    public boolean deleteSaal(String saalUUID) {
+        Saal saal = readSaalByUUID(saalUUID);
+        if (saal != null) {
+            getSaalList().remove(saal);
+            writeSaalJSON();
+            return true;
+        }else
+            return false;
+    }
+
+    public List<Film> readallFilme() {
+        return getFilmList();
+    }
+
+    public Film readFilmByUUID(String filmUUID) {
+        for (Film film : getFilmList()) {
+            if (film.getFilmUUID().equals(filmUUID)) {
+                return film;
+            }
+        }
+        return null;
+    }
+
+    public void insertFilm(Film film){
+        getFilmList().add(film);
+        writeFilmJSON();
+    }
+
+    public void updateFilm(){
+        writeFilmJSON();
+    }
+
+    public boolean deleteFilm(String filmUUID) {
+        Film film = readFilmByUUID(filmUUID);
+        if (film != null) {
+            getFilmList().remove(film);
+            writeFilmJSON();
+            return true;
+        }else
+            return false;
+    }
+
+
     public List<Film> getFilmList() {
         return filmList;
     }
@@ -122,43 +255,5 @@ public class DataHandler {
         SaalList = saalList;
     }
 
-    public List<Film> readallFilme() {
-        return getFilmList();
-    }
 
-
-    public Film readFilmByUUID(String filmUUID) {
-        for (Film film : getFilmList()) {
-            if (film.getFilmUUID().equals(filmUUID)) {
-                return film;
-            }
-        }
-        return null;
-    }
-
-    public List<Kino> readallKinos() {
-        return getKinoList();
-    }
-
-    public Kino readKinoByUUID(String kinoUUID) {
-        for (Kino kino : getKinoList()) {
-            if (kino.getKinoUUID().equals(kinoUUID)) {
-                return kino;
-            }
-        }
-        return null;
-    }
-
-    public List<Saal> readallSaele() {
-        return getSaalList();
-    }
-
-    public Saal readSaalByUUID(String saalUUID) {
-        for (Saal saal : getSaalList()) {
-            if (saal.getSaalUUID().equals(saalUUID)) {
-                return saal;
-            }
-        }
-        return null;
-    }
 }

@@ -4,14 +4,12 @@ import ch.bzz.noel.kino.data.DataHandler;
 import ch.bzz.noel.kino.model.Kino;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Kino service
@@ -70,4 +68,80 @@ public class KinoService {
                 .build();
     }
 
+    /**
+     * Create a new kino
+     *
+     * @Param Kino
+     * @return Response
+     */
+    @PUT
+    @Path("create")
+    @Produces (MediaType.TEXT_PLAIN)
+    public Response insertKino(
+            @FormParam("name") String name,
+            @FormParam("ort") String ort
+    ){
+        Kino kino = new Kino();
+        kino.setKinoUUID(UUID.randomUUID().toString());
+        kino.setName(name);
+        kino.setOrt(ort);
+
+        DataHandler.getInstance().insertKino(kino);
+        return Response
+                .status(200)
+                .entity("Kino erfolgreich angelegt")
+                .build();
+    }
+
+    /**
+     * Update a kino
+     *
+     * @Param Kino
+     * @return Response
+     */
+    @POST
+    @Path("update")
+    @Produces (MediaType.TEXT_PLAIN)
+    public Response updateKino(
+            @FormParam("kinoUUID") String kinoUUID,
+            @FormParam("name") String name,
+            @FormParam("ort") String ort
+    ){
+        int httpStatus = 200;
+        Kino kino = DataHandler.getInstance().readKinoByUUID(kinoUUID);
+        if (kino == null) {
+            kino.setKinoUUID(UUID.randomUUID().toString());
+            kino.setName(name);
+            kino.setOrt(ort);
+
+            DataHandler.getInstance().updateFilm();
+        }else {
+            httpStatus = 404;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Kino erfolgreich aktualisiert")
+                .build();
+    }
+
+    /**
+     * Delete a kino identified by uuid
+     * @Param kinoUUID
+     * @return Response
+     */
+    @DELETE
+    @Path("delete")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteKino(
+            @FormParam("kinoUUID") String kinoUUID
+    ) {
+        int httpStatus = 200;
+        if (!DataHandler.getInstance().deleteFilm(kinoUUID)) {
+            httpStatus = 404;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("kino gelöscht")
+                .build();
+    }
 }
