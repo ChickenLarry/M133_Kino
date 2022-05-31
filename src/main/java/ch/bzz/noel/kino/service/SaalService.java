@@ -4,6 +4,8 @@ import ch.bzz.noel.kino.data.DataHandler;
 import ch.bzz.noel.kino.model.Saal;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -54,6 +56,8 @@ public class SaalService {
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response readSaal(
+            @NotEmpty
+            @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @PathParam("uuid") String saalUUID
 
     ) {
@@ -81,6 +85,7 @@ public class SaalService {
     @Path("create")
     @Produces (MediaType.TEXT_PLAIN)
     public Response insertSaal(
+            @FormParam("saalUUID") String saalUUID,
             @FormParam("saalNummer") int saalNummer,
             @FormParam("plaetze") int plaetze,
             @FormParam("reihen") int reihen,
@@ -143,6 +148,7 @@ public class SaalService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteSaal(
+            @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @FormParam("saalUUID") String saalUUID
     ) {
         int httpStatus = 200;

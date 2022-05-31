@@ -4,6 +4,8 @@ import ch.bzz.noel.kino.data.DataHandler;
 import ch.bzz.noel.kino.model.Film;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -51,6 +53,8 @@ public class FilmService {
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readFilm(
+            @NotEmpty
+            @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @PathParam("uuid") String filmUUID
 
     ) {
@@ -78,6 +82,7 @@ public class FilmService {
     @Path("create")
     @Produces (MediaType.TEXT_PLAIN)
     public Response insertFilm(
+            @FormParam("filmUUID") String filmUUID,
             @FormParam("titel") String titel,
             @FormParam("laenge") int laenge,
             @FormParam("preis") int preis,
@@ -112,7 +117,7 @@ public class FilmService {
             @FormParam("filmUUID") String filmUUID,
             @FormParam("titel") String titel,
             @FormParam("laenge") int laenge,
-            @FormParam("preis") int preis,
+            @FormParam("preis") double preis,
             @FormParam("regisseur") String regisseur,
             @FormParam("hauptdarsteller") String hauptdarsteller
     ){
@@ -144,6 +149,7 @@ public class FilmService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteFilm(
+            @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @FormParam("uuid") String filmUUID
     ) {
         int httpStatus = 200;

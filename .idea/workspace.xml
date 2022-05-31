@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="xml update">
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="delete, update, create">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/data/DataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/data/DataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +199,7 @@
       <workItem from="1653373129951" duration="86000" />
       <workItem from="1653376509886" duration="1414000" />
       <workItem from="1653898501173" duration="5259000" />
-      <workItem from="1653977525154" duration="5089000" />
+      <workItem from="1653977525154" duration="9389000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1653241117101</created>
@@ -210,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653241276473</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="delete, update, create">
+      <created>1653985046140</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653985046140</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +242,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="service" />
     <MESSAGE value="xml update" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml update" />
+    <MESSAGE value="delete, update, create" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete, update, create" />
   </component>
 </project>

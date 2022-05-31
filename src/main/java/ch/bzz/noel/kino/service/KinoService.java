@@ -4,6 +4,8 @@ import ch.bzz.noel.kino.data.DataHandler;
 import ch.bzz.noel.kino.model.Kino;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -51,6 +53,8 @@ public class KinoService {
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readKino(
+            @NotEmpty
+            @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @PathParam("uuid") String kinoUUID
 
     ) {
@@ -78,6 +82,7 @@ public class KinoService {
     @Path("create")
     @Produces (MediaType.TEXT_PLAIN)
     public Response insertKino(
+            @FormParam("filmUUID") String filmUUID,
             @FormParam("name") String name,
             @FormParam("ort") String ort
     ){
@@ -133,6 +138,7 @@ public class KinoService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteKino(
+            @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @FormParam("kinoUUID") String kinoUUID
     ) {
         int httpStatus = 200;

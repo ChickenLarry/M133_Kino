@@ -1,6 +1,8 @@
 package ch.bzz.noel.kino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.Size;
+import jakarta.ws.rs.FormParam;
 
 import java.util.UUID;
 
@@ -14,11 +16,27 @@ public class Film {
      * @see Film
      */
     @JsonIgnore
+
     private String filmUUID;
+
+    @FormParam("titel")
+    @Size(min = 3, max = 50)
     private String titel;
+
+    @FormParam("laenge")
+    @Size(min = 1, max = 500)
     private int laenge;
-    private int preis;
+
+    @FormParam("preis")
+    @Size(min = 1, max = 500)
+    private double preis;
+
+    @FormParam("hauptdarsteller")
+    @Size(min = 2, max = 30)
     private String hauptdarsteller;
+
+    @FormParam("regisseur")
+    @Size(min = 2, max = 30)
     private String regisseur;
 
 
@@ -34,7 +52,7 @@ public class Film {
      * @param hauptdarsteller
      * @param regisseur
      */
-    public Film(String titel, int laenge, int preis, String hauptdarsteller, String regisseur) {
+    public Film(String titel, int laenge, double preis, String hauptdarsteller, String regisseur) {
         this.filmUUID = UUID.randomUUID().toString();
         this.titel = titel;
         this.laenge = laenge;
@@ -67,11 +85,11 @@ public class Film {
         this.laenge = laenge;
     }
 
-    public int getPreis() {
+    public double getPreis() {
         return preis;
     }
 
-    public void setPreis(int preis) {
+    public void setPreis(double preis) {
         this.preis = preis;
     }
 

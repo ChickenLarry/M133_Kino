@@ -1,6 +1,8 @@
 package ch.bzz.noel.kino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.Size;
+import jakarta.ws.rs.FormParam;
 
 import java.util.UUID;
 
@@ -15,7 +17,13 @@ public class Kino {
      */
     @JsonIgnore
     private String kinoUUID;
+
+    @FormParam("name")
+    @Size(min = 5, max = 20)
     private String name;
+
+    @FormParam("ort")
+    @Size(min = 10, max = 50)
     private String ort;
 
     /**

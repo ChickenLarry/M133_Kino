@@ -1,6 +1,8 @@
 package ch.bzz.noel.kino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.Size;
+import jakarta.ws.rs.FormParam;
 
 import java.util.UUID;
 
@@ -15,9 +17,21 @@ public class Saal {
      */
     @JsonIgnore
     private String saalUUID;
+
+    @FormParam("saalNummer")
+    @Size(min = 1, max = 20)
     private int saalNummer;
+
+    @FormParam("plaetze")
+    @Size(min = 1, max = 200)
     private int plaetze;
+
+    @FormParam("reihen")
+    @Size(min = 1, max = 20)
     private int reihen;
+
+    @FormParam("anzahlPlaetzeProReihe")
+    @Size(min = 1, max = 30)
     private int anzahlPlaetzeProReihe;
 
     /**
