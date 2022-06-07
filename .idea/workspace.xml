@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="working on validation">
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="Validation done">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/filmedit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/filmedit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/createJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/createJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/film.json" beforeDir="false" afterPath="$PROJECT_DIR$/testing/film.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +196,7 @@
       <workItem from="1653898501173" duration="5259000" />
       <workItem from="1653977525154" duration="10987000" />
       <workItem from="1654580636417" duration="5910000" />
+      <workItem from="1654602793396" duration="588000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1653241117101</created>
