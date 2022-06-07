@@ -1,9 +1,12 @@
 package ch.bzz.noel.kino.service;
 
 import ch.bzz.noel.kino.data.DataHandler;
+import ch.bzz.noel.kino.model.Film;
+import ch.bzz.noel.kino.model.Kino;
 import ch.bzz.noel.kino.model.Saal;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.*;
@@ -78,24 +81,18 @@ public class SaalService {
     /**
      * Create a new saal
      *
-     * @Param Saal
      * @return Response
+     * @Param Saal
      */
     @PUT
     @Path("create")
-    @Produces (MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     public Response insertSaal(
-            @FormParam("saalUUID") String saalUUID,
-            @FormParam("saalNummer") int saalNummer,
-            @FormParam("plaetze") int plaetze,
-            @FormParam("reihen") int reihen,
-            @FormParam("anzahlPlaetzeProReihe") int anzahlPlaetzeProReihe
-    ){
-        Saal saal = new Saal();
-        saal.setSaalNummer(saalNummer);
-        saal.setPlaetze(plaetze);
-        saal.setReihen(reihen);
-        saal.setAnzahlPlaetzeProReihe(anzahlPlaetzeProReihe);
+            @Valid @BeanParam Saal saal,
+            @FormParam("saalUUID") String saalUUID
+    ) {
+        saal.setSaalUUID(saalUUID);
+        saal.setSaalUUID(UUID.randomUUID().toString());
 
         DataHandler.getInstance().insertSaal(saal);
         return Response
@@ -107,30 +104,27 @@ public class SaalService {
     /**
      * Update a saal
      *
-     * @Param Saal
      * @return Response
+     * @Param Saal
      */
     @POST
     @Path("update")
-    @Produces (MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     public Response updateSaal(
-            @FormParam("saalUUID") String saalUUID,
-            @FormParam("saalNummer") int saalNummer,
-            @FormParam("plaetze") int plaetze,
-            @FormParam("reihen") int reihen,
-            @FormParam("anzahlPlaetzeProReihe") int anzahlPlaetzeProReihe
-    ){
+            @Valid @BeanParam Saal saal,
+            @FormParam("saalUUID") String saalUUID
+    ) {
         int httpStatus = 200;
-        Saal saal = DataHandler.getInstance().readSaalByUUID(saalUUID);
+        Saal oldSaal = DataHandler.getInstance().readSaalByUUID(saalUUID);
         if (saal == null) {
-            saal.setSaalUUID(UUID.randomUUID().toString());
-            saal.setSaalNummer(saalNummer);
-            saal.setPlaetze(plaetze);
-            saal.setReihen(reihen);
-            saal.setAnzahlPlaetzeProReihe(anzahlPlaetzeProReihe);
+            oldSaal.setSaalUUID(UUID.randomUUID().toString());
+            oldSaal.setSaalNummer(saal.getSaalNummer());
+            oldSaal.setPlaetze(saal.getPlaetze());
+            oldSaal.setReihen(saal.getReihen());
+            oldSaal.setAnzahlPlaetzeProReihe(saal.getAnzahlPlaetzeProReihe());
 
             DataHandler.getInstance().updateFilm();
-        }else {
+        } else {
             httpStatus = 404;
         }
         return Response
@@ -141,15 +135,17 @@ public class SaalService {
 
     /**
      * Delete a Saal identified by uuid
-     * @Param saalUUID
+     *
      * @return Response
+     * @Param saalUUID
      */
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteSaal(
+            @NotEmpty
             @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @FormParam("saalUUID") String saalUUID
+            @QueryParam("uuid") String saalUUID
     ) {
         int httpStatus = 200;
         if (!DataHandler.getInstance().deleteSaal(saalUUID)) {

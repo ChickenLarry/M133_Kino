@@ -1,9 +1,10 @@
 package ch.bzz.noel.kino.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.FormParam;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
@@ -17,30 +18,36 @@ public class Film {
      */
     @JsonIgnore
 
+    @FormParam("filmUUID")
+    @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     private String filmUUID;
 
     @FormParam("titel")
+    @NotEmpty
     @Size(min = 3, max = 50)
     private String titel;
 
     @FormParam("laenge")
+    @NotEmpty
     @Size(min = 1, max = 500)
     private int laenge;
 
     @FormParam("preis")
-    @Size(min = 1, max = 500)
-    private double preis;
+    @DecimalMax(value="40.00")
+    @DecimalMin(value="19.95")
+    private BigDecimal preis;
 
     @FormParam("hauptdarsteller")
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String hauptdarsteller;
 
     @FormParam("regisseur")
+    @NotEmpty
     @Size(min = 2, max = 30)
     private String regisseur;
 
-
-    public Film() {
+    public Film(String film1, int laenge, double v, String harry, String potter) {
 
     }
 
@@ -52,7 +59,7 @@ public class Film {
      * @param hauptdarsteller
      * @param regisseur
      */
-    public Film(String titel, int laenge, double preis, String hauptdarsteller, String regisseur) {
+    public Film(String titel, int laenge, BigDecimal preis, String hauptdarsteller, String regisseur) {
         this.filmUUID = UUID.randomUUID().toString();
         this.titel = titel;
         this.laenge = laenge;
@@ -85,11 +92,11 @@ public class Film {
         this.laenge = laenge;
     }
 
-    public double getPreis() {
+    public BigDecimal getPreis() {
         return preis;
     }
 
-    public void setPreis(double preis) {
+    public void setPreis(BigDecimal preis) {
         this.preis = preis;
     }
 

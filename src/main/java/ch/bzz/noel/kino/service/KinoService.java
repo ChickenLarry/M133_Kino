@@ -1,9 +1,11 @@
 package ch.bzz.noel.kino.service;
 
 import ch.bzz.noel.kino.data.DataHandler;
+import ch.bzz.noel.kino.model.Film;
 import ch.bzz.noel.kino.model.Kino;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.*;
@@ -82,14 +84,11 @@ public class KinoService {
     @Path("create")
     @Produces (MediaType.TEXT_PLAIN)
     public Response insertKino(
-            @FormParam("filmUUID") String filmUUID,
-            @FormParam("name") String name,
-            @FormParam("ort") String ort
+            @Valid @BeanParam Kino kino,
+            @FormParam("kinoUUID") String kinoUUID
     ){
-        Kino kino = new Kino();
+        kino.setKinoUUID(kinoUUID);
         kino.setKinoUUID(UUID.randomUUID().toString());
-        kino.setName(name);
-        kino.setOrt(ort);
 
         DataHandler.getInstance().insertKino(kino);
         return Response
@@ -108,16 +107,15 @@ public class KinoService {
     @Path("update")
     @Produces (MediaType.TEXT_PLAIN)
     public Response updateKino(
-            @FormParam("kinoUUID") String kinoUUID,
-            @FormParam("name") String name,
-            @FormParam("ort") String ort
+            @Valid @BeanParam Kino kino,
+            @FormParam("kinoUUID") String kinoUUID
     ){
         int httpStatus = 200;
-        Kino kino = DataHandler.getInstance().readKinoByUUID(kinoUUID);
+        Kino oldKino = DataHandler.getInstance().readKinoByUUID(kinoUUID);
         if (kino == null) {
-            kino.setKinoUUID(UUID.randomUUID().toString());
-            kino.setName(name);
-            kino.setOrt(ort);
+            oldKino.setKinoUUID(UUID.randomUUID().toString());
+            oldKino.setName(kino.getName());
+            oldKino.setOrt(kino.getOrt());
 
             DataHandler.getInstance().updateFilm();
         }else {
@@ -138,11 +136,12 @@ public class KinoService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteKino(
+            @NotEmpty
             @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @FormParam("kinoUUID") String kinoUUID
+            @QueryParam("uuid") String kinoUUID
     ) {
         int httpStatus = 200;
-        if (!DataHandler.getInstance().deleteFilm(kinoUUID)) {
+        if (!DataHandler.getInstance().deleteKino(kinoUUID)) {
             httpStatus = 404;
         }
         return Response

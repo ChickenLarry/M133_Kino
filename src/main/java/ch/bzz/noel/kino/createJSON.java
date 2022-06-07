@@ -18,8 +18,8 @@ public class createJSON {
 
 
         Film[] filme = {
-                new Film("film1", 1, 1,"Harry","Potter"),
-                new Film("film1", 1, 1,"Harry","Potter")
+                new Film("film1", 1, 1.0,"Harry","Potter"),
+                new Film("film1", 1, 1.0,"Harry","Potter")
         };
 
         Kino[] kinos = {

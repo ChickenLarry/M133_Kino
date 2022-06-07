@@ -4,12 +4,14 @@ import ch.bzz.noel.kino.data.DataHandler;
 import ch.bzz.noel.kino.model.Film;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -82,20 +84,11 @@ public class FilmService {
     @Path("create")
     @Produces (MediaType.TEXT_PLAIN)
     public Response insertFilm(
-            @FormParam("filmUUID") String filmUUID,
-            @FormParam("titel") String titel,
-            @FormParam("laenge") int laenge,
-            @FormParam("preis") int preis,
-            @FormParam("regisseur") String regisseur,
-            @FormParam("hauptdarsteller") String hauptdarsteller
+            @Valid @BeanParam Film film,
+            @FormParam("filmUUID") String filmUUID
     ){
-        Film film = new Film();
+        film.setFilmUUID(filmUUID);
         film.setFilmUUID(UUID.randomUUID().toString());
-        film.setTitel(titel);
-        film.setLaenge(laenge);
-        film.setPreis(preis);
-        film.setRegisseur(regisseur);
-        film.setHauptdarsteller(hauptdarsteller);
 
         DataHandler.getInstance().insertFilm(film);
         return Response
@@ -114,21 +107,18 @@ public class FilmService {
     @Path("update")
     @Produces (MediaType.TEXT_PLAIN)
     public Response updateFilm(
-            @FormParam("filmUUID") String filmUUID,
-            @FormParam("titel") String titel,
-            @FormParam("laenge") int laenge,
-            @FormParam("preis") double preis,
-            @FormParam("regisseur") String regisseur,
-            @FormParam("hauptdarsteller") String hauptdarsteller
+            @Valid @BeanParam Film film,
+            @FormParam("filmUUID") String filmUUID
+
     ){
         int httpStatus = 200;
-        Film film = DataHandler.getInstance().readFilmByUUID(filmUUID);
+        Film oldFilm = DataHandler.getInstance().readFilmByUUID(film.getFilmUUID());
         if (film == null) {
-            film.setTitel(titel);
-            film.setLaenge(laenge);
-            film.setPreis(preis);
-            film.setRegisseur(regisseur);
-            film.setHauptdarsteller(hauptdarsteller);
+            oldFilm.setTitel(film.getTitel());
+            oldFilm.setLaenge(film.getLaenge());
+            oldFilm.setPreis(film.getPreis());
+            oldFilm.setHauptdarsteller(film.getHauptdarsteller());
+            oldFilm.setRegisseur(film.getRegisseur());
 
             DataHandler.getInstance().updateFilm();
         }else {
@@ -149,8 +139,9 @@ public class FilmService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteFilm(
+            @NotEmpty
             @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @FormParam("uuid") String filmUUID
+            @QueryParam("uuid") String filmUUID
     ) {
         int httpStatus = 200;
         if (!DataHandler.getInstance().deleteFilm(filmUUID)) {
