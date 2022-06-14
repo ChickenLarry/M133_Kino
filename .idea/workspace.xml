@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="Validation done">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/filmedit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/filmedit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +36,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -173,6 +171,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.createJSON" />
+        <item itemvalue="Application.createJSON" />
       </list>
     </recent_temporary>
   </component>
@@ -197,6 +196,7 @@
       <workItem from="1653977525154" duration="10987000" />
       <workItem from="1654580636417" duration="5910000" />
       <workItem from="1654602793396" duration="588000" />
+      <workItem from="1655038446170" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1653241117101</created>
