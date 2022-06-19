@@ -1,71 +1,10 @@
 
 
 document.addEventListener("DOMContentLoaded",() => {
-    readFilm();
-    readKino();
-    readSaal();
     showFilm();
     showKino();
     showSaal();
 });
-
-
-function readFilm() {
-    const filmUUID = getQueryParam("uuid")
-    fetch("./resource/film/read?uuid" + filmUUID)
-    .then(function (response) {
-        if (response.ok) {
-            return response
-        } else {
-            console.log(response);
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            showFilm(data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-}
-
-function readKino() {
-    const kinoUUID = getQueryParam("uuid")
-    fetch("./resource/kino/read?uuid" + kinoUUID)
-        .then(function (response) {
-            if (response.ok) {
-                return response
-            } else {
-                console.log(response);
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            showKino(data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-}
-
-function readSaal() {
-    const kinoUUID = getQueryParam("uuid")
-    fetch("./resource/saal/read?uuid" + saalUUID)
-        .then(function (response) {
-            if (response.ok) {
-                return response
-            } else {
-                console.log(response);
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            showSaal(data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
-}
 
 function showFilm(data){
     document.getElementById( "titel").value = data.titel;

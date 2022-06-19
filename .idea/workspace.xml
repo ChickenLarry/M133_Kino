@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="Validation done">
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="test commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/filmedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/filmedit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../codesnippets" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.11441647" />
     <property name="project.structure.side.proportion" value="0.2879257" />
@@ -197,6 +198,8 @@
       <workItem from="1654580636417" duration="5910000" />
       <workItem from="1654602793396" duration="588000" />
       <workItem from="1655038446170" duration="79000" />
+      <workItem from="1655188770074" duration="1405000" />
+      <workItem from="1655622838629" duration="924000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1653241117101</created>
@@ -226,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653987616573</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test commit">
+      <created>1655188793865</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655188793865</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +258,7 @@
     <MESSAGE value="xml update" />
     <MESSAGE value="delete, update, create" />
     <MESSAGE value="working on validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on validation" />
+    <MESSAGE value="test commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit" />
   </component>
 </project>
