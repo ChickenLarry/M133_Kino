@@ -9,36 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Kino.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/data/DataHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Film.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Kino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Saal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/createJSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/data/DataHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Film.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Kino.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/Saal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/FilmService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/KinoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/KinoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/SaalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/SaalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/noel/kino/service/TestService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/filmedit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/filmedit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="services" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -243,7 +214,7 @@
       <workItem from="1655622838629" duration="1287000" />
       <workItem from="1655744352700" duration="1339000" />
       <workItem from="1655745738899" duration="1999000" />
-      <workItem from="1655756164743" duration="3287000" />
+      <workItem from="1655756164743" duration="3740000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1653241117101</created>
@@ -287,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655623774015</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="services">
+      <created>1655762073844</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655762073844</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +290,7 @@
     <MESSAGE value="working on validation" />
     <MESSAGE value="test commit" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="services" />
+    <option name="LAST_COMMIT_MESSAGE" value="services" />
   </component>
 </project>
