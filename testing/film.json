@@ -1,5 +1,6 @@
 [
   {
+    "filmUUID": "1",
     "titel": "film1",
     "laenge": 1,
     "preis": 1.0,
@@ -7,6 +8,7 @@
     "regisseur": "Potter"
   },
   {
+    "filmUUID": "1",
     "titel": "film1",
     "laenge": 1,
     "preis": 1.0,

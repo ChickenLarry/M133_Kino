@@ -1,1 +1,1 @@
-[{"name":"Kino","ort":"Zürich"},{"name":"Kino 2","ort":"Basel"}]
+[{"kinoUUID": "1","name":"Kino","ort":"Zürich"},{"kinoUUID": "2","name":"Kino 2","ort":"Basel"}]

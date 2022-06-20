@@ -1,26 +1,37 @@
-package ch.bzz.noel.kino.service;
+package ch.bzz.kino.service;
 
-
-import jakarta.ws.rs.ApplicationPath;
-import jakarta.ws.rs.core.Application;
-
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
 import java.util.Properties;
+import java.util.Set;
 
 /**
  * configure the web services and properties
- *
- * @author noel
- * @version 1.0
  */
 
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:\\Github\\autoscout_m133\\testing\\bookList.properties";
+    private static final String PROPERTIES_PATH = "C:/Bzz/Data/kino/list.properties";
     private static Properties properties = null;
+
+    /**
+     * define all provider classes
+     *
+     * @return set of classes
+     */
+    @Override
+    public Set<Class<?>> getClasses() {
+        HashSet providers = new HashSet<Class<?>>();
+        providers.add(FilmService.class);
+        providers.add(SaalService.class);
+        providers.add(KinoService.class);
+        return providers;
+    }
 
 
     /**
@@ -56,6 +67,7 @@ public class Config extends Application {
     }
 
     /**
+     *
      * Sets the properties
      *
      * @param properties the value to set

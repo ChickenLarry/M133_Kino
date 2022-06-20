@@ -1,29 +1,26 @@
-package ch.bzz.noel.kino.service;
+package ch.bzz.kino.service;
 
-import ch.bzz.noel.kino.data.DataHandler;
-import ch.bzz.noel.kino.model.Film;
+import ch.bzz.kino.data.DataHandler;
+import ch.bzz.kino.model.Film;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
 
-import java.math.BigDecimal;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.UUID;
 
 /**
- * Film service
+ * @Author: Noel
  *
- * @author noel
- * @version 1.0
- */
+ * @Since 1.0.0-SNAPSHOT
+ *
+*/
 @Path("film")
 public class FilmService {
-
     /**
      * @return List of all films
      * @throws JsonProcessingException
@@ -32,16 +29,10 @@ public class FilmService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listFilme() {
-        List<Film> filmList = DataHandler.getInstance().readallFilme();
-        try {
+        List<Film> filmList = DataHandler.getInstance().readAllFilme();{
             return Response
                     .status(200)
-                    .entity(new ObjectMapper().writeValueAsString(filmList))
-                    .build();
-        } catch (JsonProcessingException e) {
-            return Response
-                    .status(500)
-                    .entity("Fehler beim Serialisieren der Filme")
+                    .entity(filmList)
                     .build();
         }
     }
@@ -152,4 +143,5 @@ public class FilmService {
                 .entity("film gelöscht")
                 .build();
     }
+
 }
