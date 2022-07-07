@@ -16,7 +16,7 @@ import java.util.Set;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:/Bzz/Data/kino/list.properties";
+    private static final String PROPERTIES_PATH = "N:\\Schule\\2lehrjahr\\Dienstag\\M133_Suter\\property\\List.properties";
     private static Properties properties = null;
 
     /**
@@ -30,6 +30,7 @@ public class Config extends Application {
         providers.add(FilmService.class);
         providers.add(SaalService.class);
         providers.add(KinoService.class);
+        providers.add(UserService.class);
         return providers;
     }
 

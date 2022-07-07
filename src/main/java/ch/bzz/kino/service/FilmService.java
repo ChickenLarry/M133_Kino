@@ -28,9 +28,18 @@ public class FilmService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listFilme() {
+    public Response listFilme(
+            @CookieParam("userRole") String userRole
+    ) {
         List<Film> filmList = DataHandler.getInstance().readAllFilme();{
+            int httpStatus;
+            if (userRole == null || userRole.equals("guest")) {
+                httpStatus = 404;
+            } else {
+                httpStatus = 200;
+            }
             return Response
+                    .status(httpStatus)
                     .status(200)
                     .entity(filmList)
                     .build();
@@ -55,7 +64,7 @@ public class FilmService {
         if (film == null) {
             return Response
                     .status(404)
-                    .entity("Film nicht gefunden")
+                    .entity("Film not found")
                     .build();
         }
 
@@ -84,7 +93,7 @@ public class FilmService {
         DataHandler.getInstance().insertFilm(film);
         return Response
                 .status(200)
-                .entity("Film erfolgreich angelegt")
+                .entity("Film succesfully iserted")
                 .build();
     }
 
@@ -117,7 +126,7 @@ public class FilmService {
         }
         return Response
                 .status(httpStatus)
-                .entity("Film erfolgreich aktualisiert")
+                .entity("Film succesfully updated")
                 .build();
     }
 
@@ -140,7 +149,7 @@ public class FilmService {
         }
         return Response
                 .status(httpStatus)
-                .entity("film gelöscht")
+                .entity("film deleted")
                 .build();
     }
 

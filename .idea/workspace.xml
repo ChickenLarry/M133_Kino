@@ -2,14 +2,30 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Kino" />
+      <artifact name="M133_Kino:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="services" />
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="testing">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/filmEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/kino.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Kino.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/data/DataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/data/DataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/KinoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/KinoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/SaalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/SaalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/List.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,13 +35,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ViewController" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,12 +88,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../codesnippets" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Memory-Game" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.11441647" />
     <property name="project.structure.side.proportion" value="0.2879257" />
   </component>
@@ -91,25 +109,11 @@
       <recent name="C:\github\M133_Kino\testing" />
     </key>
   </component>
-  <component name="RunManager" selected="GlassFish Server.GlassFish 6.2.5">
-    <configuration name="createJSON" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch.bzz.noel.kino.createJSON" />
-      <module name="M133_Kino" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ch.bzz.noel.kino.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GlassFish 6.2.5" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 6.2.5" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="openjdk-17" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+  <component name="RunManager">
+    <configuration name="GlassFish 5.1.0" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.1.0" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Kino">
+        <artifact name="M133_Kino:war exploded">
           <settings />
         </artifact>
       </deployment>
@@ -173,20 +177,10 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Kino" />
+          <artifact name="M133_Kino:war exploded" />
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.createJSON" />
-      <item itemvalue="GlassFish Server.GlassFish 6.2.5" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.createJSON" />
-        <item itemvalue="Application.createJSON" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -215,6 +209,15 @@
       <workItem from="1655744352700" duration="1339000" />
       <workItem from="1655745738899" duration="1999000" />
       <workItem from="1655756164743" duration="3740000" />
+      <workItem from="1656764752824" duration="75000" />
+      <workItem from="1656764841048" duration="292000" />
+      <workItem from="1656765139649" duration="1443000" />
+      <workItem from="1656766819941" duration="1171000" />
+      <workItem from="1656768744736" duration="777000" />
+      <workItem from="1656777657394" duration="11158000" />
+      <workItem from="1656839707929" duration="5576000" />
+      <workItem from="1656866813712" duration="2183000" />
+      <workItem from="1657215113865" duration="2702000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1653241117101</created>

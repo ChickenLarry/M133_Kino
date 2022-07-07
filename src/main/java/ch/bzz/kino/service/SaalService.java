@@ -23,12 +23,20 @@ public class SaalService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response listSaal() {
+    public Response listSaal(
+            @CookieParam("userRole") String userRole
+    ) {
         List<Saal> saalList = DataHandler.getInstance().readAllSaal();
-            return Response
-                    .status(200)
-                    .entity(saalList)
-                    .build();
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 404;
+        } else {
+            httpStatus = 200;
+        }
+        return Response
+                .status(httpStatus)
+                .entity(saalList)
+                .build();
     }
 
     /**
@@ -50,7 +58,7 @@ public class SaalService {
         if (saal == null) {
             return Response
                     .status(404)
-                    .entity("Saal nicht gefunden")
+                    .entity("Saal not found")
                     .build();
         }
 
@@ -79,7 +87,7 @@ public class SaalService {
         DataHandler.getInstance().insertSaal(saal);
         return Response
                 .status(200)
-                .entity("Saal erfolgreich angelegt")
+                .entity("Saal succesfully inserted")
                 .build();
     }
 
@@ -105,13 +113,13 @@ public class SaalService {
             oldSaal.setReihen(saal.getReihen());
             oldSaal.setAnzahlPlaetzeProReihe(saal.getAnzahlPlaetzeProReihe());
 
-            DataHandler.getInstance().updateFilm();
+            DataHandler.getInstance().updateSaal();
         } else {
             httpStatus = 404;
         }
         return Response
                 .status(httpStatus)
-                .entity("Saal erfolgreich aktualisiert")
+                .entity("Saal succesfully updated")
                 .build();
     }
 
@@ -135,7 +143,7 @@ public class SaalService {
         }
         return Response
                 .status(httpStatus)
-                .entity("Saal gelöscht")
+                .entity("Saal deleted")
                 .build();
     }
 

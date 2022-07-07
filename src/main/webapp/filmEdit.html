@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Noel Schärer">
+    <meta name="project" content="Kino">
+    <meta name="description" content="kino films to edit">
+    <title>Title</title>
+</head>
+<body>
+<form id="filmEditForm" name="filmEdit">
+    <h3>Film Edit</h3>
+    <div id="message">...</div>
+    <buttton type="button" id="logoff">Logoff</buttton>
+    <table>
+        <tr>
+            <td><label for="titel">film title</label></td>
+            <td>
+                <input id="titel" name="titel" type="text" size="30" minlength="2" maxlength="30" required>
+                <input id="filmUUID" name="filmUUID" type="hidden">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="laenge">film length</label></td>
+            <td>
+                <input id="laenge" name="laenge" type="number" size="30" minlength="10" maxlength="200" required>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="preis">film price</label></td>
+            <td>
+                <input id="preis" name="preis" type="text" size="30" minlength="2" maxlength="8" required>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="hauptdarsteller">main character</label></td>
+            <td>
+                <input id="hauptdarsteller" name="hauptdarsteller" type="text" size="30" minlength="5" maxlength="35" required>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="regisseur">regisseur</label></td>
+            <td>
+                <input id="regisseur" name="regisseur" type="text" size="30" minlength="5" maxlength="35" required>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <button id="save" type="submit">Save</button>
+            </td>
+            <td>
+                <button id="reset" type="reset">Reset</button>
+            </td>
+            <td>
+                <button id="cancel" type="button">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script src="./js/kino.js"></script>
+<script src="./js/js.cookie.js"></script>
+<script src="./js/login.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@ package ch.bzz.kino.data;
 import ch.bzz.kino.model.Film;
 import ch.bzz.kino.model.Kino;
 import ch.bzz.kino.model.Saal;
+import ch.bzz.kino.model.User;
 import ch.bzz.kino.service.Config;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,6 +25,7 @@ public class DataHandler {
     private List<Film> filmList;
     private List<Saal> saalList;
     private List<Kino> kinoList;
+    private List<User> userList;
 
     /**
      * private constructor defeats instantiation
@@ -35,6 +37,8 @@ public class DataHandler {
         readSaalJSON();
         setKinoList(new ArrayList<>());
         readKinoJSON();
+        setUserList(new ArrayList<>());
+        readUserJSON();
     }
 
 
@@ -58,13 +62,30 @@ public class DataHandler {
     public List<Film> readAllFilme() {
         return getFilmList();
     }
+    /**
+     * reads all Saal
+     *
+     * @return list of saal
+     */
     public List<Saal> readAllSaal() {
         return getSaalList();
     }
+    /**
+     * reads all Kino
+     *
+     * @return list of kinos
+     */
     public List<Kino> readAllKino() {
         return getKinoList();
     }
-
+    /**
+     * reads all User
+     *
+     * @return list of users
+     */
+    public List<User> readAllUser() {
+        return getUserList();
+    }
 
 
     /**
@@ -115,11 +136,43 @@ public class DataHandler {
         return kino;
     }
 
+    /**
+     * reads a User by its userUUID
+     *
+     * @param userUUID is userUUID from User Class
+     * @return the User (null=not found)
+     */
+    public User readUserByUUID(String userUUID) {
+        User user = null;
+        for (User entry : getUserList()) {
+            if (entry.getUserUUID() == (userUUID)) {
+                user = entry;
+            }
+        }
+        return user;
+    }
+
+    /**
+     * reads a User by its username and password
+     *
+     * @param username is username from User Class
+     * @param password is password from User Class
+     * @return the User (null=not found)
+     */
+    public User readUser(String username, String password) {
+        User user = null;
+        for (User entry : getUserList()) {
+            if (entry.getUserName() == (username) && entry.getPassword() == (password)) {
+                user = entry;
+            }
+        }
+        return user;
+    }
 
     /**
      * inserts a new film into the filmList
      *
-     * @param film the film to be saved
+     * @param film to be saved
      */
     public void insertFilm(Film film) {
         getFilmList().add(film);
@@ -129,7 +182,7 @@ public class DataHandler {
     /**
      * inserts a new saal into the saalList
      *
-     * @param saal the film to be saved
+     * @param saal to be saved
      */
     public void insertSaal(Saal saal) {
         getSaalList().add(saal);
@@ -139,10 +192,20 @@ public class DataHandler {
     /**
      * inserts a new kino into the kinoList
      *
-     * @param kino the film to be saved
+     * @param kino to be saved
      */
     public void insertKino(Kino kino) {
         getKinoList().add(kino);
+        writeKinoJSON();
+    }
+
+    /**
+     * inserts a new user into the userList
+     *
+     * @param user to be saved
+     */
+    public void insertUser(User user) {
+        getUserList().add(user);
         writeKinoJSON();
     }
 
@@ -165,6 +228,13 @@ public class DataHandler {
      */
     public void updateKino() {
         writeKinoJSON();
+    }
+
+    /**
+     * updates the kinoList
+     */
+    public void updateUser() {
+        writeUserJSON();
     }
 
 
@@ -194,8 +264,8 @@ public class DataHandler {
     public boolean deleteSaal(String saalUUID) {
         Saal saal = readSaalByUUID(saalUUID);
         if (saal != null) {
-            getFilmList().remove(saal);
-            writeFilmJSON();
+            getSaalList().remove(saal);
+            writeSaalJSON();
             return true;
         } else {
             return false;
@@ -211,8 +281,25 @@ public class DataHandler {
     public boolean deleteKino(String kinoUUID) {
         Kino kino = readKinoByUUID(kinoUUID);
         if (kino != null) {
-            getFilmList().remove(kino);
-            writeFilmJSON();
+            getKinoList().remove(kino);
+            writeKinoJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * deletes a user identified by the userUUID
+     *
+     * @param userUUID the key
+     * @return success=true/false
+     */
+    public boolean deleteUser(String userUUID) {
+        User user = readUserByUUID(userUUID);
+        if (user != null) {
+            getUserList().remove(user);
+            writeUserJSON();
             return true;
         } else {
             return false;
@@ -277,6 +364,25 @@ public class DataHandler {
     }
 
     /**
+     * reads the Kino from the JSON-file
+     */
+    private void readUserJSON() {
+        try {
+            String path = Config.getProperty("userJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            User[] users = objectMapper.readValue(jsonData, User[].class);
+            for (User user : users) {
+                getUserList().add(user);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
      * writes the filmList to the JSON-file
      */
     private void writeFilmJSON() {
@@ -334,6 +440,25 @@ public class DataHandler {
     }
 
     /**
+     * writes the kinoList to the JSON-file
+     */
+    private void writeUserJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String filmPath = Config.getProperty("userJSON");
+        try {
+            fileOutputStream = new FileOutputStream(filmPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getUserList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
      * get the filmList of the Json-file
      * */
     private List<Film> getFilmList() {
@@ -367,6 +492,17 @@ public class DataHandler {
     }
 
     /**
+     * get the kinoList of the Json-file
+     * */
+    private List<User> getUserList() {
+        if (userList == null){
+            setUserList(new ArrayList<>());
+            readUserJSON();
+        }
+        return userList;
+    }
+
+    /**
      * set the filmList
      * */
     private void setFilmList(List<Film> filmList) {
@@ -385,6 +521,13 @@ public class DataHandler {
      * */
     private void setKinoList(List<Kino> kinoList) {
         this.kinoList = kinoList;
+    }
+
+    /**
+     * set the userList
+     * */
+    private void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
 }

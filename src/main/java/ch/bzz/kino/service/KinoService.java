@@ -28,10 +28,18 @@ public class KinoService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listKinos() {
+    public Response listKinos(
+            @CookieParam("userRole") String userRole
+    ) {
         List<Kino> kinoList = DataHandler.getInstance().readAllKino();
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 404;
+        } else {
+            httpStatus = 200;
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(kinoList)
                 .build();
     }
@@ -54,7 +62,7 @@ public class KinoService {
         if (kino == null) {
             return Response
                     .status(404)
-                    .entity("Kino nicht gefunden")
+                    .entity("Kino not found")
                     .build();
         }
 
@@ -83,7 +91,7 @@ public class KinoService {
         DataHandler.getInstance().insertKino(kino);
         return Response
                 .status(200)
-                .entity("Kino erfolgreich angelegt")
+                .entity("Kino succesfully created")
                 .build();
     }
 
@@ -107,13 +115,13 @@ public class KinoService {
             oldKino.setName(kino.getName());
             oldKino.setOrt(kino.getOrt());
 
-            DataHandler.getInstance().updateFilm();
+            DataHandler.getInstance().updateKino();
         }else {
             httpStatus = 404;
         }
         return Response
                 .status(httpStatus)
-                .entity("Kino erfolgreich aktualisiert")
+                .entity("Kino succesfully updated")
                 .build();
     }
 
@@ -136,7 +144,7 @@ public class KinoService {
         }
         return Response
                 .status(httpStatus)
-                .entity("kino gelöscht")
+                .entity("kino deleted")
                 .build();
     }
 }
