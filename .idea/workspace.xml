@@ -10,23 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="authorisation">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/AuthorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/ISBN13.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/ISBN13Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/JWToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Kino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Kino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Saal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Saal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/FilmService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/KinoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/KinoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/SaalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/SaalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/testing/user.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,15 +71,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/github/M133_Kino/src/main/java/ch/bzz/kino/util"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/github/M133_Kino/src/main/java/ch/bzz/kino/util&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\github\M133_Kino\src\main\java\ch\bzz\kino\util" />
