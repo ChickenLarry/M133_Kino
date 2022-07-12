@@ -1,0 +1,297 @@
+{
+	"id": "e1705fb0-fb0d-43da-b857-5384f0672aa4",
+	"name": "Kino",
+	"timestamp": "2022-05-20T15:10:40.881Z",
+	"collection_id": "20915825-55558a34-9c87-4ed6-a5b2-95c847041d19",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 12,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "75d84d8d-bbe9-430c-aa6f-7194c86a1654",
+			"name": "read list Film",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/list/",
+			"time": 44,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				44
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "2a61029f-090d-46ec-85e7-bd314473fb49",
+			"name": "successful read one Film",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read/495305b7-f169-4af1-affd-7ce833632bf8",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "64e333fc-f327-49d5-8376-731e0fd76475",
+			"name": "read list Kino",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/kino/list/",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "f3540a95-79fc-4008-a961-518e437a24d1",
+			"name": "successful read one Kino",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/kino/read/4cf30aef-4321-47ca-ab14-2c55b515b16b",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "27c4f407-d05a-477c-9b98-981c2490e929",
+			"name": "read list Saal",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/saal/list/",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "f28ae7f4-fdcf-4b62-9daa-5a3d1033c973",
+			"name": "successful read one Saal",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/saal/read/9f3ef303-dc2f-476a-b3ea-911a1eba9f13",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "051a58a9-7527-468e-a721-3c003abc69ac",
+			"name": "failing read one Film",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read/495502b7-f069-4a61-abf0-723833633bf",
+			"time": 7,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		},
+		{
+			"id": "f97ea6a8-e1f4-43ef-8848-1e980929fe7e",
+			"name": "failing read one Kino",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/kino/read/4c7304ef-4321-47ca-3b14-2c35b515b16",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		},
+		{
+			"id": "91a72769-8847-4fa5-9629-4cf4e58ad179",
+			"name": "failing read one Saal",
+			"url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/saal/read/9c35f303-dc4f-476a-b3ea-911a13ba9f1",
+			"time": 9,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 122,
+	"collection": {
+		"requests": [
+			{
+				"id": "75d84d8d-bbe9-430c-aa6f-7194c86a1654",
+				"method": "GET"
+			},
+			{
+				"id": "2a61029f-090d-46ec-85e7-bd314473fb49",
+				"method": "GET"
+			},
+			{
+				"id": "64e333fc-f327-49d5-8376-731e0fd76475",
+				"method": "GET"
+			},
+			{
+				"id": "f3540a95-79fc-4008-a961-518e437a24d1",
+				"method": "GET"
+			},
+			{
+				"id": "27c4f407-d05a-477c-9b98-981c2490e929",
+				"method": "GET"
+			},
+			{
+				"id": "f28ae7f4-fdcf-4b62-9daa-5a3d1033c973",
+				"method": "GET"
+			},
+			{
+				"id": "051a58a9-7527-468e-a721-3c003abc69ac",
+				"method": "GET"
+			},
+			{
+				"id": "f97ea6a8-e1f4-43ef-8848-1e980929fe7e",
+				"method": "GET"
+			},
+			{
+				"id": "91a72769-8847-4fa5-9629-4cf4e58ad179",
+				"method": "GET"
+			}
+		]
+	}
+}

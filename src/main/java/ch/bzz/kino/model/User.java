@@ -33,6 +33,9 @@ public class User {
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!-_%*?&]{"+8+","+16+"}$", message = "Passwort needs: one lowercase letter, one uppercase letter, one digit. It must be between "+8+" & "+16+" Letters long")
     private String password;
 
+    @FormParam("userRole")
+    @NotEmpty(message = "userRole can't be empty")
+    @Size(min = 5, max = 5)
     private String userRole;
 
     public User(){
