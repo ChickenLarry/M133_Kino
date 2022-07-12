@@ -1,272 +1,337 @@
 {
-  "id": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-  "name": "Kino",
-  "description": "",
-  "order": [],
-  "folders": [
+  "info": {
+    "_postman_id": "55458a4b-9c87-4ad6-1562-95cd47041d18",
+    "name": "Autoscout",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
     {
-      "id": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "name": "Read",
-      "description": "",
-      "order": [
-        "3ef1383a-de53-fd5d-3465-5e73b63623f9",
-        "1fc6b5c5-1e45-2726-de95-be4e5381a221",
-        "5c1cc25a-d920-8c01-a2a9-3cc5e694b900",
-        "9913a663-96c5-828f-ee05-2019ff5287ca",
-        "628d7d85-94b0-d765-98f5-2463e0b42d6f",
-        "1581d0c9-cfea-b36d-c48f-10e49da17938",
-        "47321339-12be-73f8-db78-ec246091abd7",
-        "1302b06e-0144-1c19-7410-bb365f27be34",
-        "70937331-d415-6ebe-f9ac-0202d892eeb1"
-      ],
-      "folders_order": [],
-      "owner": 0,
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a"
-    }
-  ],
-  "folders_order": [
-    "9e434eac-e015-0601-f3c6-b9cb14cb0d16"
-  ],
-  "timestamp": 0,
-  "owner": 0,
-  "public": false,
-  "requests": [
-    {
-      "id": "1302b06e-0144-1c19-7410-bb365f27be34",
-      "name": "Test Single Kino - Success",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "method": "GET",
-      "headers": "",
-      "data": [],
-      "rawModeData": "",
-      "tests": "pm.test(\"Test Status Single Zoo Success\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n",
-      "preRequestScript": "",
-      "url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
-      "responses": [],
-      "pathVariableData": [],
-      "queryParams": [
+      "name": "read list Film",
+      "event": [
         {
-          "key": "uuid",
-          "value": "fe18f574-d803-11ec-9d64-0242ac120002"
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
         }
       ],
-      "headerData": [],
-      "collection_id": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16"
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/list/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "film",
+            "list",
+            ""
+          ]
+        }
+      },
+      "response": []
     },
     {
-      "id": "1581d0c9-cfea-b36d-c48f-10e49da17938",
-      "headers": "",
-      "headerData": [],
-      "url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/kino/read?kinoUUID=8736487-3424-23432-4-234",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "queryParams": [
+      "name": "successful read one Film",
+      "event": [
         {
-          "key": "kinoUUID",
-          "value": "8736487-3424-23432-4-234",
-          "equals": true,
-          "description": "",
-          "enabled": true
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
         }
       ],
-      "preRequestScript": "",
-      "pathVariables": {},
-      "pathVariableData": [],
-      "method": "GET",
-      "data": [],
-      "dataMode": "params",
-      "tests": "pm.test(\"Test Status Single Gehege Success\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n",
-      "currentHelper": "normal",
-      "helperAttributes": {},
-      "time": 1655762328875,
-      "name": "Test Single Film- Success",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "responses": []
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read/42250537-f069-4161-afc0-7ce33cc34af4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "film",
+            "read",
+            "495505b7-f069-4a61-aff0-7ce833634bf8"
+          ]
+        }
+      },
+      "response": []
     },
     {
-      "id": "1fc6b5c5-1e45-2726-de95-be4e5381a221",
-      "headers": "",
-      "headerData": [],
-      "url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read?uuid=test1234",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "queryParams": [
+      "name": "read list Kino",
+      "event": [
         {
-          "key": "uuid",
-          "value": "test1234",
-          "equals": true,
-          "description": "",
-          "enabled": true
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
         }
       ],
-      "preRequestScript": "",
-      "pathVariables": {},
-      "pathVariableData": [],
-      "method": "GET",
-      "data": [],
-      "dataMode": "params",
-      "tests": "pm.test(\"Test Status Single Kino Fail\", function () {\r\n    pm.response.to.have.status(400);\r\n});",
-      "currentHelper": "normal",
-      "helperAttributes": {},
-      "time": 1655762097143,
-      "name": "Test Single Kino-Fail",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "responses": []
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/kino/list/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "kino",
+            "list",
+            ""
+          ]
+        }
+      },
+      "response": []
     },
     {
-      "id": "3ef1383a-de53-fd5d-3465-5e73b63623f9",
-      "headers": "",
-      "headerData": [],
-      "url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read?filmUUID=89auz8d-8732-23432-23432",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "queryParams": [
+      "name": "successful read one Kino",
+      "event": [
         {
-          "key": "filmUUID",
-          "value": "89auz8d-8732-23432-23432",
-          "equals": true,
-          "description": "",
-          "enabled": true
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
         }
       ],
-      "preRequestScript": "",
-      "pathVariables": {},
-      "pathVariableData": [],
-      "method": "GET",
-      "data": [],
-      "dataMode": "params",
-      "tests": "pm.test(\"Test Status Single film Fail\", function () {\r\n    pm.response.to.have.status(400);\r\n});",
-      "currentHelper": "normal",
-      "helperAttributes": {},
-      "time": 1655762022889,
-      "name": "Test Single Film-Fail",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "responses": []
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/kino/read/1cf30aef-4321-48c1-ad14-2c65b51541aa",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "kino",
+            "read",
+            "4cf30aef-43d1-47ca-ab14-2c15b515b46e"
+          ]
+        }
+      },
+      "response": []
     },
     {
-      "id": "47321339-12be-73f8-db78-ec246091abd7",
-      "name": "Test Kino List - Success",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "method": "GET",
-      "headers": "",
-      "data": [],
-      "rawModeData": "",
-      "tests": "pm.test(\"Test Status whole Zoo List Success\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n",
-      "preRequestScript": "",
-      "url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
-      "responses": [],
-      "pathVariableData": [],
-      "queryParams": [],
-      "headerData": [],
-      "collection_id": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16"
-    },
-    {
-      "id": "5c1cc25a-d920-8c01-a2a9-3cc5e694b900",
-      "headers": "",
-      "headerData": [],
-      "url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read?uuid=test1234",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "queryParams": [
+      "name": "read list Saal",
+      "event": [
         {
-          "key": "uuid",
-          "value": "test1234",
-          "equals": true,
-          "description": "",
-          "enabled": true
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
         }
       ],
-      "preRequestScript": "",
-      "pathVariables": {},
-      "pathVariableData": [],
-      "method": "GET",
-      "data": [],
-      "dataMode": "params",
-      "tests": "pm.test(\"Test Status Single Tier Fail\", function () {\r\n    pm.response.to.have.status(400);\r\n});",
-      "currentHelper": "normal",
-      "helperAttributes": {},
-      "time": 1655762143270,
-      "name": "Test Single Saal- Fail",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "responses": []
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/saal/list/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "saal",
+            "list",
+            ""
+          ]
+        }
+      },
+      "response": []
     },
     {
-      "id": "628d7d85-94b0-d765-98f5-2463e0b42d6f",
-      "headers": "",
-      "headerData": [],
-      "url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/list/",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "queryParams": [],
-      "preRequestScript": "",
-      "pathVariables": {},
-      "pathVariableData": [],
-      "method": "GET",
-      "data": [],
-      "dataMode": "params",
-      "tests": "pm.test(\"Test Status whole Tier List Success\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n",
-      "currentHelper": "normal",
-      "helperAttributes": {},
-      "time": 1655762219149,
-      "name": "Test Film List - Success",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "responses": []
-    },
-    {
-      "id": "70937331-d415-6ebe-f9ac-0202d892eeb1",
-      "headers": "",
-      "headerData": [],
-      "url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/Saal/list/",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "queryParams": [],
-      "preRequestScript": "",
-      "pathVariables": {},
-      "pathVariableData": [],
-      "method": "GET",
-      "data": [],
-      "dataMode": "params",
-      "tests": "pm.test(\"Test Status whole Gehege List Success\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n",
-      "currentHelper": "normal",
-      "helperAttributes": {},
-      "time": 1655762372250,
-      "name": "Test  Saal List - Success",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "responses": []
-    },
-    {
-      "id": "9913a663-96c5-828f-ee05-2019ff5287ca",
-      "headers": "",
-      "headerData": [],
-      "url": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read?filmUUID=f369d306-d8f2-11ec-9d64-0242ac120002",
-      "folder": "9e434eac-e015-0601-f3c6-b9cb14cb0d16",
-      "queryParams": [
+      "name": "successful read one Saal",
+      "event": [
         {
-          "key": "filmUUID",
-          "value": "f369d306-d8f2-11ec-9d64-0242ac120002",
-          "equals": true,
-          "description": "",
-          "enabled": true
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
         }
       ],
-      "preRequestScript": "",
-      "pathVariables": {},
-      "pathVariableData": [],
-      "method": "GET",
-      "data": [],
-      "dataMode": "params",
-      "tests": "pm.test(\"Test Status Single Tier Success\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n\r\n",
-      "currentHelper": "normal",
-      "helperAttributes": {},
-      "time": 1655762197154,
-      "name": "Test Single Animal- Success",
-      "description": "",
-      "collectionId": "a1d04e2a-2346-0bb5-2d8a-36fbb871586a",
-      "responses": []
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/saal/read/3f36f303-ac4f-176b-b3e4-911a1eba9a12",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "saal",
+            "read",
+            "9f3ef303-dc2f-476a-b3ea-911a1eba9f13"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "failing read one Film",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 404\", function () {\r",
+              "    pm.response.to.have.status(404);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/film/read/435505b7-f069-4a61-1fd0-7ce8a3b34b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "film",
+            "read",
+            "495505b7-f069-4a61-aff0-7ce833634bf"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "failing read one Kino",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 404\", function () {\r",
+              "    pm.response.to.have.status(404);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/kino/read/4cc309cf-4321-477a-a614-2ce5ba15b16",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "kino",
+            "read",
+            "4cf30aef-4121-47ca-2b14-2c853515b14"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "failing read one Saal",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status test 404\", function () {\r",
+              "    pm.response.to.have.status(404);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Kino-1.0-SNAPSHOT/resource/saal/read/9f3ef503-dc2f-c26a-b3ea-0f1a1eba9f34",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "Kino-1.0-SNAPSHOT",
+            "resource",
+            "saal",
+            "read",
+            "9e3ef103-fc23-476a-b3ea-91141ebe9f1"
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }

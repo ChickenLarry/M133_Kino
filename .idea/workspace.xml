@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="authorisation correction">
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="postman">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/postman/Kino.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/testing/postman/Kino.postman_collection.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +78,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/github/codesnippets"
+    "last_opened_file_path": "C:/github/M133_Kino/testing/postman"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\github\M133_Kino\testing\postman" />
       <recent name="C:\github\M133_Kino\src\main\java\ch\bzz\kino\util" />
       <recent name="C:\github\M133_Kino\src\main" />
       <recent name="C:\github\M133_Kino\src\main\resources" />
@@ -278,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657635331974</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="postman">
+      <created>1657639784707</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657639784707</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +313,7 @@
     <MESSAGE value="services" />
     <MESSAGE value="authorisation" />
     <MESSAGE value="authorisation correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="authorisation correction" />
+    <MESSAGE value="postman" />
+    <option name="LAST_COMMIT_MESSAGE" value="postman" />
   </component>
 </project>
