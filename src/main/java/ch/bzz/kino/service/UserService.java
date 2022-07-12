@@ -1,6 +1,7 @@
 package ch.bzz.kino.service;
 
 import ch.bzz.kino.data.DataHandler;
+import ch.bzz.kino.model.Film;
 import ch.bzz.kino.model.Saal;
 import ch.bzz.kino.model.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -59,7 +60,6 @@ public class UserService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response logout(
     ) {
-
         NewCookie cookie = new NewCookie(
                 "userRole",
                 "guest",
@@ -83,12 +83,32 @@ public class UserService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
+    public Response listUser(
+            @CookieParam("userRole") String userRole
+    ) {
+        List<User> userList = null;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 404;
+        } else {
+            httpStatus = 200;
+            userList = DataHandler.getInstance().readAllUser();
+        }
 
-    public Response listUser() {
-        List<User> userList = DataHandler.getInstance().readAllUser();
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(userList)
+                .cookie(cookie)
                 .build();
     }
 
@@ -103,6 +123,7 @@ public class UserService {
 
     public Response readUser(
             @NotEmpty
+            @CookieParam("userRole") String userRole,
             @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @PathParam("uuid") String userUUID
 
@@ -115,9 +136,20 @@ public class UserService {
                     .build();
         }
 
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(200)
                 .entity(user)
+                .cookie(cookie)
                 .build();
     }
 
@@ -132,15 +164,27 @@ public class UserService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertUser(
             @Valid @BeanParam User user,
+            @CookieParam("userRole") String userRole,
             @FormParam("userUUID") String userUUID
     ) {
         user.setUserUUID(userUUID);
         user.setUserUUID(UUID.randomUUID().toString());
-
         DataHandler.getInstance().insertUser(user);
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(200)
-                .entity("User succesfully iserted")
+                .entity("User succesfully inserted")
+                .cookie(cookie)
                 .build();
     }
 
@@ -155,7 +199,8 @@ public class UserService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateUser(
             @Valid @BeanParam User user,
-            @FormParam("userUUID") String userUUID
+            @FormParam("userUUID") String userUUID,
+            @CookieParam("userRole") String userRole
     ) {
         int httpStatus = 200;
         User oldUser = DataHandler.getInstance().readUserByUUID(userUUID);
@@ -170,9 +215,21 @@ public class UserService {
         } else {
             httpStatus = 404;
         }
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(httpStatus)
                 .entity("User succesfully updated")
+                .cookie(cookie)
                 .build();
     }
 
@@ -188,15 +245,28 @@ public class UserService {
     public Response deleteUser(
             @NotEmpty
             @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @QueryParam("uuid") String userUUID
+            @FormParam("uuid") String userUUID,
+            @CookieParam("userRole") String userRole
     ) {
         int httpStatus = 200;
         if (!DataHandler.getInstance().deleteUser(userUUID)) {
             httpStatus = 404;
         }
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(httpStatus)
-                .entity("User deleted")
+                .entity("user deleted")
+                .cookie(cookie)
                 .build();
     }
 

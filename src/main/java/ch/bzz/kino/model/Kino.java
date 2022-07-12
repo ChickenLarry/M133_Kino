@@ -8,6 +8,14 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.ws.rs.FormParam;
 
+/**
+ *
+ * Kino Class
+ * @Author: Noel
+ *
+ * @Since 1.0.0-SNAPSHOT
+ *
+ */
 @Getter
 @Setter
 public class Kino {

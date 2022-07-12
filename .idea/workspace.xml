@@ -9,22 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="testing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/filmEdit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/kino.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Kino.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1e0df404-2288-4da0-8f3d-ba2472bc7457" name="Changes" comment="authorisation">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/AuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/ISBN13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/ISBN13Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/util/JWToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/data/DataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/data/DataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Kino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Kino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Saal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/Saal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/FilmService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/KinoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/KinoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/SaalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/SaalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/List.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bzz/kino/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/testing/user.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,21 +87,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Memory-Game" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.11441647" />
-    <property name="project.structure.side.proportion" value="0.2879257" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/github/M133_Kino/src/main/java/ch/bzz/kino/util"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\github\M133_Kino\src\main\java\ch\bzz\kino\util" />
       <recent name="C:\github\M133_Kino\src\main" />
       <recent name="C:\github\M133_Kino\src\main\resources" />
     </key>
@@ -217,7 +216,18 @@
       <workItem from="1656777657394" duration="11158000" />
       <workItem from="1656839707929" duration="5576000" />
       <workItem from="1656866813712" duration="2183000" />
-      <workItem from="1657215113865" duration="2702000" />
+      <workItem from="1657215113865" duration="3021000" />
+      <workItem from="1657382570089" duration="14000" />
+      <workItem from="1657382956333" duration="2000" />
+      <workItem from="1657390123254" duration="40000" />
+      <workItem from="1657390604324" duration="196000" />
+      <workItem from="1657445371216" duration="19000" />
+      <workItem from="1657476510014" duration="3000" />
+      <workItem from="1657527465117" duration="11000" />
+      <workItem from="1657527585152" duration="9000" />
+      <workItem from="1657563837167" duration="175000" />
+      <workItem from="1657564158201" duration="3000" />
+      <workItem from="1657564276574" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="service">
       <created>1653241117101</created>
@@ -268,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655762073844</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="authorisation">
+      <created>1657218185523</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657218185523</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +311,7 @@
     <MESSAGE value="test commit" />
     <MESSAGE value="." />
     <MESSAGE value="services" />
-    <option name="LAST_COMMIT_MESSAGE" value="services" />
+    <MESSAGE value="authorisation" />
+    <option name="LAST_COMMIT_MESSAGE" value="authorisation" />
   </component>
 </project>

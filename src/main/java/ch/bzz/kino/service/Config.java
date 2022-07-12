@@ -1,5 +1,7 @@
 package ch.bzz.kino.service;
 
+import ch.bzz.kino.util.AuthorizationFilter;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.io.FileInputStream;
@@ -31,6 +33,7 @@ public class Config extends Application {
         providers.add(SaalService.class);
         providers.add(KinoService.class);
         providers.add(UserService.class);
+        providers.add(AuthorizationFilter.class);
         return providers;
     }
 
@@ -63,7 +66,7 @@ public class Config extends Application {
             if (inputStream != null) inputStream.close();
         } catch (IOException ex) {
             ex.printStackTrace();
-            throw new RuntimeException();
+            throw new RuntimeException("Error while reading properties");
         }
     }
 

@@ -7,6 +7,14 @@ import javax.validation.constraints.*;
 import javax.ws.rs.FormParam;
 import java.math.BigDecimal;
 
+/**
+ *
+ * Film Class
+ * @Author: Noel
+ *
+ * @Since 1.0.0-SNAPSHOT
+ *
+ */
 @Getter
 @Setter
 public class Film {

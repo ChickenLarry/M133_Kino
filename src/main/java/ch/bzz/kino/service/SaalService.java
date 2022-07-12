@@ -1,6 +1,7 @@
 package ch.bzz.kino.service;
 
 import ch.bzz.kino.data.DataHandler;
+import ch.bzz.kino.model.Kino;
 import ch.bzz.kino.model.Saal;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.UUID;
@@ -22,20 +24,32 @@ public class SaalService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-
     public Response listSaal(
             @CookieParam("userRole") String userRole
     ) {
-        List<Saal> saalList = DataHandler.getInstance().readAllSaal();
+        List<Saal> saalList = null;
         int httpStatus;
         if (userRole == null || userRole.equals("guest")) {
             httpStatus = 404;
         } else {
             httpStatus = 200;
+            saalList = DataHandler.getInstance().readAllSaal();
         }
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(httpStatus)
                 .entity(saalList)
+                .cookie(cookie)
                 .build();
     }
 
@@ -50,6 +64,7 @@ public class SaalService {
 
     public Response readSaal(
             @NotEmpty
+            @CookieParam("userRole") String userRole,
             @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @PathParam("uuid") String saalUUID
 
@@ -61,10 +76,20 @@ public class SaalService {
                     .entity("Saal not found")
                     .build();
         }
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
 
         return Response
                 .status(200)
                 .entity(saal)
+                .cookie(cookie)
                 .build();
     }
 
@@ -78,16 +103,29 @@ public class SaalService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertSaal(
+            @NotEmpty
             @Valid @BeanParam Saal saal,
+            @CookieParam("userRole") String userRole,
             @FormParam("saalUUID") String saalUUID
     ) {
         saal.setSaalUUID(saalUUID);
         saal.setSaalUUID(UUID.randomUUID().toString());
-
         DataHandler.getInstance().insertSaal(saal);
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(200)
                 .entity("Saal succesfully inserted")
+                .cookie(cookie)
                 .build();
     }
 
@@ -102,7 +140,8 @@ public class SaalService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateSaal(
             @Valid @BeanParam Saal saal,
-            @FormParam("saalUUID") String saalUUID
+            @FormParam("saalUUID") String saalUUID,
+            @CookieParam("userRole") String userRole
     ) {
         int httpStatus = 200;
         Saal oldSaal = DataHandler.getInstance().readSaalByUUID(saalUUID);
@@ -117,9 +156,21 @@ public class SaalService {
         } else {
             httpStatus = 404;
         }
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(httpStatus)
                 .entity("Saal succesfully updated")
+                .cookie(cookie)
                 .build();
     }
 
@@ -135,15 +186,28 @@ public class SaalService {
     public Response deleteSaal(
             @NotEmpty
             @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @QueryParam("uuid") String saalUUID
+            @FormParam("uuid") String saalUUID,
+            @CookieParam("userRole") String userRole
     ) {
         int httpStatus = 200;
         if (!DataHandler.getInstance().deleteSaal(saalUUID)) {
             httpStatus = 404;
         }
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
+
         return Response
                 .status(httpStatus)
-                .entity("Saal deleted")
+                .entity("saal deleted")
+                .cookie(cookie)
                 .build();
     }
 

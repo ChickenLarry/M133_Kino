@@ -7,12 +7,19 @@ import lombok.Setter;
 import javax.validation.constraints.*;
 import javax.ws.rs.FormParam;
 
+/**
+ *
+ * User Class
+ * @Author: Noel
+ *
+ * @Since 1.0.0-SNAPSHOT
+ *
+ */
 @Getter
 @Setter
-@NoArgsConstructor
 public class User {
 
-    @FormParam("saalUUID")
+    @FormParam("userUUID")
     @Pattern(regexp = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     private String userUUID;
 
@@ -26,5 +33,9 @@ public class User {
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!-_%*?&]{"+8+","+16+"}$", message = "Passwort needs: one lowercase letter, one uppercase letter, one digit. It must be between "+8+" & "+16+" Letters long")
     private String password;
 
-    private String userRole = "guest";
+    private String userRole;
+
+    public User(){
+        setUserRole("guest");
+    }
 }

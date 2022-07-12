@@ -7,6 +7,14 @@ import lombok.Setter;
 import javax.validation.constraints.*;
 import javax.ws.rs.FormParam;
 
+/**
+ *
+ * Saal Class
+ * @Author: Noel
+ *
+ * @Since 1.0.0-SNAPSHOT
+ *
+ */
 @Getter
 @Setter
 @NoArgsConstructor
